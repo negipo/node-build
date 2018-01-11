@@ -668,12 +668,13 @@ for option in "${OPTIONS[@]}"; do
   esac
 done
 
-NODE_VERSION=$(remote_version "${ARGUMENTS[0]}") || {
-  echo "The specified version is not available."
-  echo "Run ndenv install -l or node-build --definitions"
-  echo "to show available versions of node.js/io.js."
-  exit 1
-}
+# NODE_VERSION=$(remote_version "${ARGUMENTS[0]}") || {
+#   echo "The specified version is not available."
+#   echo "Run ndenv install -l or node-build --definitions"
+#   echo "to show available versions of node.js/io.js."
+#   exit 1
+# }
+NODE_VERSION="${ARGUMENTS[0]}"
 
 PREFIX_PATH="${ARGUMENTS[1]}"
 if [ -z "$PREFIX_PATH" ]; then
